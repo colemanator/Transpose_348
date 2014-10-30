@@ -24,9 +24,11 @@
 		A41D7CF219B4199D00B2AC54 /* welcomeViewControl.m in Sources */ = {isa = PBXBuildFile; fileRef = A41D7CF119B4199D00B2AC54 /* welcomeViewControl.m */; };
 		A41D7D0319B440F300B2AC54 /* journeyViewControl.m in Sources */ = {isa = PBXBuildFile; fileRef = A41D7D0219B440F300B2AC54 /* journeyViewControl.m */; };
 		A41D7D0619B44DEC00B2AC54 /* loginViewControl.m in Sources */ = {isa = PBXBuildFile; fileRef = A41D7D0519B44DEC00B2AC54 /* loginViewControl.m */; };
+		D02D183F1A00782800B5353F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D02D183E1A00782800B5353F /* MapKit.framework */; };
 		D0B187C619FFF084002126C4 /* journeyResultsControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B187C519FFF084002126C4 /* journeyResultsControllerViewController.m */; };
 		D0B187CB19FFF674002126C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0B187C919FFF674002126C4 /* Main.storyboard */; };
 		D0B6113719FFE8E500E505E1 /* journeyTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B6113619FFE8E500E505E1 /* journeyTableController.m */; };
+		D0B9B9531A009CCB00657C9E /* registrationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B9B9521A009CCB00657C9E /* registrationController.m */; };
 		E3C4CF0319E78D620054B65C /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3C4CF0219E78D620054B65C /* HomeViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -67,11 +69,14 @@
 		A41D7D0219B440F300B2AC54 /* journeyViewControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = journeyViewControl.m; path = ../journeyViewControl.m; sourceTree = "<group>"; };
 		A41D7D0419B44DEC00B2AC54 /* loginViewControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = loginViewControl.h; sourceTree = "<group>"; };
 		A41D7D0519B44DEC00B2AC54 /* loginViewControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = loginViewControl.m; sourceTree = "<group>"; };
+		D02D183E1A00782800B5353F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		D0B187C419FFF084002126C4 /* journeyResultsControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = journeyResultsControllerViewController.h; sourceTree = "<group>"; };
 		D0B187C519FFF084002126C4 /* journeyResultsControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = journeyResultsControllerViewController.m; sourceTree = "<group>"; };
 		D0B187CA19FFF674002126C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D0B6113519FFE8E500E505E1 /* journeyTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = journeyTableController.h; path = ../journeyTableController.h; sourceTree = "<group>"; };
 		D0B6113619FFE8E500E505E1 /* journeyTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = journeyTableController.m; path = ../journeyTableController.m; sourceTree = "<group>"; };
+		D0B9B9511A009CCB00657C9E /* registrationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = registrationController.h; sourceTree = "<group>"; };
+		D0B9B9521A009CCB00657C9E /* registrationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = registrationController.m; sourceTree = "<group>"; };
 		E3C4CF0119E78D620054B65C /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		E3C4CF0219E78D620054B65C /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -81,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D02D183F1A00782800B5353F /* MapKit.framework in Frameworks */,
 				A41D7CB819B411B300B2AC54 /* CoreGraphics.framework in Frameworks */,
 				A41D7CBA19B411B300B2AC54 /* UIKit.framework in Frameworks */,
 				A41D7CB619B411B300B2AC54 /* Foundation.framework in Frameworks */,
@@ -122,6 +128,7 @@
 		A41D7CB419B411B300B2AC54 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D02D183E1A00782800B5353F /* MapKit.framework */,
 				A41D7CB519B411B300B2AC54 /* Foundation.framework */,
 				A41D7CB719B411B300B2AC54 /* CoreGraphics.framework */,
 				A41D7CB919B411B300B2AC54 /* UIKit.framework */,
@@ -134,6 +141,8 @@
 			isa = PBXGroup;
 			children = (
 				D0B187C919FFF674002126C4 /* Main.storyboard */,
+				D0B9B9511A009CCB00657C9E /* registrationController.h */,
+				D0B9B9521A009CCB00657C9E /* registrationController.m */,
 				D0B6113519FFE8E500E505E1 /* journeyTableController.h */,
 				D0B6113619FFE8E500E505E1 /* journeyTableController.m */,
 				A41D7CF019B4199D00B2AC54 /* welcomeViewControl.h */,
@@ -289,6 +298,7 @@
 				A41D7CCF19B411B300B2AC54 /* SecondViewController.m in Sources */,
 				A41D7CF219B4199D00B2AC54 /* welcomeViewControl.m in Sources */,
 				A41D7CC619B411B300B2AC54 /* AppDelegate.m in Sources */,
+				D0B9B9531A009CCB00657C9E /* registrationController.m in Sources */,
 				A41D7D0319B440F300B2AC54 /* journeyViewControl.m in Sources */,
 				A41D7CCC19B411B300B2AC54 /* FirstViewController.m in Sources */,
 				A41D7CC219B411B300B2AC54 /* main.m in Sources */,

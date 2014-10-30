@@ -1,5 +1,5 @@
 //
-//  journeyResultsControllerViewController.h
+//  registrationController.h
 //  Transpose
 //
 //  Created by Peter Coleman on 29/10/2014.
@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <CoreLocation/CoreLocation.h>
 
-@interface journeyResultsControllerViewController : UIViewController
+@interface registrationController : UIViewController
+
+- (IBAction)backgroundTap:(id)sender;
 
 @end

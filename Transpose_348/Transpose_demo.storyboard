@@ -436,7 +436,6 @@
             <objects>
                 <navigationController title="Journey" id="Vdq-IX-CHp" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Journey" id="qdg-kF-rk4"/>
-                    <navigationItem key="navigationItem" id="Ghh-y4-uUd"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="TRb-Tu-26A">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -907,7 +906,7 @@
         <!--registerScreenOne-->
         <scene sceneID="L5D-Ld-KdV">
             <objects>
-                <viewController title="registerScreenOne" id="z0f-NF-rkU" customClass="registrationController" sceneMemberID="viewController">
+                <viewController title="registerScreenOne" id="z0f-NF-rkU" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8k1-Lm-Msw"/>
                         <viewControllerLayoutGuide type="bottom" id="zb4-FY-WXl"/>
@@ -961,10 +960,6 @@
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <gestureRecognizers/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="zTA-r2-qPz" appends="YES" id="ZRn-mU-EDh"/>
-                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Basic Details" prompt="Registration" id="Svm-iA-Agj">
                         <barButtonItem key="rightBarButtonItem" title="Next" style="plain" id="6jf-Iz-Asb">
@@ -983,18 +978,13 @@
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oR7-Gv-IJv" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="zTA-r2-qPz">
-                    <connections>
-                        <action selector="backgroundTap:" destination="z0f-NF-rkU" id="pKg-0p-FrZ"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-1053" y="-442"/>
         </scene>
         <!--registerScreenTwo-->
         <scene sceneID="8q5-vr-eVU">
             <objects>
-                <viewController title="registerScreenTwo" id="OUH-t5-Bzx" customClass="registrationController" sceneMemberID="viewController">
+                <viewController title="registerScreenTwo" id="OUH-t5-Bzx" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TzW-Ab-1gf"/>
                         <viewControllerLayoutGuide type="bottom" id="SSC-et-Dpy"/>
@@ -1035,10 +1025,6 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <gestureRecognizers/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="4iI-ol-65s" appends="YES" id="1zT-6o-gRa"/>
-                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Preferences" prompt="Registration" id="Czw-Kh-6Xu">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="pTJ-TP-hWf">
@@ -1057,18 +1043,13 @@
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u2d-Go-JXl" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="4iI-ol-65s">
-                    <connections>
-                        <action selector="backgroundTap:" destination="OUH-t5-Bzx" id="Twv-8F-DM4"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-642" y="-442"/>
         </scene>
         <!--registerScreenThree-->
         <scene sceneID="LCF-6f-rCE">
             <objects>
-                <viewController title="registerScreenThree" id="xwr-4Z-5sJ" customClass="registrationController" sceneMemberID="viewController">
+                <viewController title="registerScreenThree" id="xwr-4Z-5sJ" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="f6l-97-Si9"/>
                         <viewControllerLayoutGuide type="bottom" id="jTJ-hi-ja8"/>
@@ -1099,10 +1080,6 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <gestureRecognizers/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="PDW-yL-QO6" appends="YES" id="h2k-he-MTe"/>
-                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Password" prompt="Registration" id="SWl-Jb-hRT">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="JxV-uJ-twF">
@@ -1113,19 +1090,11 @@
                                 <state key="normal" title="Done">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="CZ4-MO-1fc" kind="push" id="qNk-O4-Xtc"/>
-                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tUj-aL-tuU" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="PDW-yL-QO6">
-                    <connections>
-                        <action selector="backgroundTap:" destination="xwr-4Z-5sJ" id="x2h-iW-Djt"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-255" y="-442"/>
         </scene>
@@ -1200,7 +1169,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="qNk-O4-Xtc"/>
         <segue reference="sIi-WF-sKy"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.6788684449951532" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
