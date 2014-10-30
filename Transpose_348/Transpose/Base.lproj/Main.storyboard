@@ -25,12 +25,6 @@
                                 <fontDescription key="fontDescription" type="system" size="system"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Going to" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dJP-Ny-DRv">
-                                <rect key="frame" x="16" y="175" width="288" height="60"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a location" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JLS-aO-boE">
                                 <rect key="frame" x="16" y="243" width="288" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
@@ -53,6 +47,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Going to" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dJP-Ny-DRv">
+                                <rect key="frame" x="16" y="175" width="288" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -75,6 +75,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="LocationsNextButton:" destination="CZ4-MO-1fc" eventType="touchUpInside" id="UFF-HZ-pPJ"/>
                                     <segue destination="feq-cm-i62" kind="push" id="IfC-Nw-Cq0"/>
                                 </connections>
                             </button>
@@ -144,10 +145,13 @@
                                 </connections>
                             </button>
                             <connections>
-                                <action selector="Next:" destination="feq-cm-i62" id="rFh-lA-eGe"/>
+                                <action selector="timeNextButton:" destination="feq-cm-i62" id="paS-p6-3pn"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="timeTypePicker" destination="aJ8-uR-XUp" id="PEF-Jh-Xlj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NTV-TD-Fnh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -229,8 +233,18 @@
                                     <segue destination="g2o-hF-7fL" kind="push" id="sIi-WF-sKy"/>
                                 </connections>
                             </button>
+                            <connections>
+                                <action selector="transportTypeNextButton:" destination="22c-QS-mnN" id="0SR-sV-QDA"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="Ferry" destination="XjW-S1-7hz" id="rmp-di-TMk"/>
+                        <outlet property="bus" destination="QAu-t0-FJN" id="bBF-8i-9hj"/>
+                        <outlet property="ferry" destination="XjW-S1-7hz" id="uQf-C5-bRA"/>
+                        <outlet property="train" destination="qzg-DF-2FS" id="sN6-PF-SPi"/>
+                        <outlet property="tram" destination="Jwe-4g-exY" id="1IE-RU-Lep"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D9r-6y-jW0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

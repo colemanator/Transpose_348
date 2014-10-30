@@ -13,7 +13,8 @@
 @implementation journeyViewControl
 
 NSArray *timeTypesArray;
-@synthesize startLoaction, endLocation;
+@synthesize startLoaction, endLocation, searchData;
+
 
 - (void)viewDidLoad
 {
@@ -49,43 +50,6 @@ NSArray *timeTypesArray;
     // Dispose of any resources that can be recreated.
 }
 
--(IBAction)nextLocations: (id)send {
-    @try{
-        if([[self.startLoaction text] isEqualToString:@""] || [[self.endLocation text] isEqualToString:@""]){
-            [self alertStatus:@"Please enter Email and Password" :@"Sign in Failed!" :0];
-        } else {
-            NSString *post =[[NSString alloc] initWithFormat:@"startLocation=%@&endLocation=%@",[self.startLoaction text],[self.endLocation text]];
-            NSLog(@"PostData: %@",post);
-            
-            NSURL *url=[NSURL URLWithString:@"http://dipinkrishna.com/jsonlogin.php"];
-            
-            NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-            
-            NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
-            
-            NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-            [request setURL:url];
-            [request setHTTPMethod:@"POST"];
-            [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
-            [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-            [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-            [request setHTTPBody:postData];
-            
-            //[NSURLRequest setAllowsAnyHTTPSCertificate:YES forHost:[url host]];
-            
-            NSError *error = [[NSError alloc] init];
-            NSHTTPURLResponse *response = nil;
-            NSData *urlData=[NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
-            
-            NSLog(@"Response code: %ld", (long)[response statusCode]);
-            
-        }
-    }
-    @catch (NSException * e) {
-        NSLog(@"Exception: %@", e);
-        [self alertStatus:@"Sign in Failed." :@"Error!" :0];
-    }
-}
 
 - (void) alertStatus:(NSString *)msg :(NSString *)title :(int) tag
 {
@@ -100,6 +64,41 @@ NSArray *timeTypesArray;
 
 - (IBAction)backgroundTap:(id)sender {
     [self.view endEditing:YES];
+}
+
+- (IBAction)LocationsNextButton:(id)sender{
+    [searchData addObject: startLoaction.text];
+    [searchData addObject: endLocation.text];
+}
+
+
+
+- (IBAction)timeNextButton:(id)sender {
+    NSString *timeTypeSelected = [timeTypesArray objectAtIndex:[self.timeTypePicker selectedRowInComponent:0]];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.timeStyle = NSDateFormatterNoStyle;
+    
+    NSString *timeSelected = [dateFormatter stringFromDate:_time];
+    
+    [searchData addObject: timeTypeSelected];
+    [searchData addObject:timeSelected];
+    
+}
+
+- (IBAction)transportTypeNextButton:(id)sender {
+    if(_bus.on){
+        [searchData addObject:@"bus"];
+    }
+    if(_train.on){
+        [searchData addObject:@"train"];
+    }
+    if(_ferry.on){
+        [searchData addObject:@"ferry"];
+    }
+    if(_tram.on){
+        [searchData addObject:@"tram"];
+    }
 }
 
 

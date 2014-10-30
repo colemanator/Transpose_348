@@ -7,8 +7,11 @@
 //
 
 #import "journeyTableController.h"
+#import "journeyViewControl.h"
 
 @implementation journeyTableController
+
+journeyViewControl *journeySearch;
 
 NSArray *journeies;
 
@@ -19,6 +22,10 @@ NSArray *journeies;
     [[NSUserDefaults standardUserDefaults] synchronize];
     
     journeies = [[NSArray alloc] initWithObjects:@"Central station to caboolture station",@"Southbank station to caboolture station", nil];
+    journeySearch = [[journeyViewControl alloc]init];
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -56,5 +63,7 @@ didSelectRowAtIndexPath:(NSIndexPath*)indexPath {
     [self performSegueWithIdentifier:segueString
                               sender:[journeies objectAtIndex:indexPath.row]];
 }
+
+
 @end
 
