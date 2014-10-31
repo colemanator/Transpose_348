@@ -438,6 +438,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="displayFrom" destination="guV-P0-cM3" id="uq5-ZW-LXf"/>
+                        <outlet property="displayName" destination="W8g-TR-Xer" id="3Hx-bF-ViI"/>
+                        <outlet property="displayTime" destination="sLh-Zm-ibE" id="xds-C7-l0G"/>
+                        <outlet property="displayTo" destination="vvi-YC-eVJ" id="o5b-Za-x9c"/>
                         <segue destination="M8h-G6-mkI" kind="modal" id="uHS-eg-zo4"/>
                     </connections>
                 </viewController>
@@ -1215,7 +1219,7 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="qNk-O4-Xtc"/>
-        <segue reference="sIi-WF-sKy"/>
+        <segue reference="4CJ-bE-ppu"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.6788684449951532" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>

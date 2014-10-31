@@ -10,12 +10,12 @@
 #import "journeyViewControl.h"
 
 @implementation journeyTableController
+@synthesize jsonArray;
 
 journeyViewControl *journeySearch;
 
 NSArray *journeies;
 NSData *data;
-NSArray *jsonArray;
 
 -(void)viewDidLoad{
     [super viewDidLoad];
@@ -70,7 +70,9 @@ NSArray *jsonArray;
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
     }
     
-    cell.textLabel.text = [[jsonArray objectAtIndex:indexPath.row] objectForKey:(@"totaltime")];
+    NSString *displayText = [NSString stringWithFormat:@"%@%ld, %@, Travil time:%@", @"Option:",(long)indexPath.row+1,[[jsonArray objectAtIndex:indexPath.row] objectForKey:(@"boardingtime")],[[jsonArray objectAtIndex:indexPath.row] objectForKey:(@"totaltime")]];
+    
+    cell.textLabel.text = displayText;
     return cell;}
 
 - (void)tableView:(UITableView *)tableView

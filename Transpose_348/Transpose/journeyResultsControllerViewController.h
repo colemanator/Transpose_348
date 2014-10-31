@@ -10,5 +10,9 @@
 #import <CoreLocation/CoreLocation.h>
 
 @interface journeyResultsControllerViewController : UIViewController
+@property (strong, nonatomic) IBOutlet UILabel *displayTime;
+@property (strong, nonatomic) IBOutlet UILabel *displayName;
+@property (strong, nonatomic) IBOutlet UILabel *displayFrom;
+@property (strong, nonatomic) IBOutlet UILabel *displayTo;
 
 @end

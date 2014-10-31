@@ -7,6 +7,7 @@
 //
 
 #import "journeyResultsControllerViewController.h"
+#import "journeyTableController.h"
 
 @interface journeyResultsControllerViewController ()
 
@@ -14,9 +15,14 @@
 
 @implementation journeyResultsControllerViewController
 
+journeyTableController *tableController;
+NSArray *jsonDetails;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    tableController = [[journeyTableController alloc]init];
+    jsonDetails = tableController.jsonArray;
 }
 
 - (void)didReceiveMemoryWarning {

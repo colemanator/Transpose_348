@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface journeyTableController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
-
+@property (strong, nonatomic)NSArray *jsonArray;
 @end
