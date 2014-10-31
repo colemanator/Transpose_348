@@ -75,8 +75,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="LocationsNextButton:" destination="CZ4-MO-1fc" eventType="touchUpInside" id="UFF-HZ-pPJ"/>
-                                    <segue destination="feq-cm-i62" kind="push" id="IfC-Nw-Cq0"/>
+                                    <segue destination="feq-cm-i62" kind="push" identifier="locations" id="IfC-Nw-Cq0"/>
                                 </connections>
                             </button>
                             <connections>
@@ -141,7 +140,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="22c-QS-mnN" kind="push" id="SgH-Wt-obw"/>
+                                    <segue destination="22c-QS-mnN" kind="push" identifier="times" id="SgH-Wt-obw"/>
                                 </connections>
                             </button>
                             <connections>
@@ -150,6 +149,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="selectedTime" destination="YHl-Uh-sue" id="kxl-Ae-elN"/>
                         <outlet property="timeTypePicker" destination="aJ8-uR-XUp" id="PEF-Jh-Xlj"/>
                     </connections>
                 </viewController>
@@ -230,7 +230,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="g2o-hF-7fL" kind="push" id="sIi-WF-sKy"/>
+                                    <segue destination="g2o-hF-7fL" kind="push" identifier="transports" id="sIi-WF-sKy"/>
                                 </connections>
                             </button>
                             <connections>
@@ -433,7 +433,7 @@
                                 </state>
                             </button>
                             <connections>
-                                <segue destination="g2o-hF-7fL" kind="push" id="ovj-94-92r"/>
+                                <segue destination="g2o-hF-7fL" kind="push" id="4CJ-bE-ppu"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

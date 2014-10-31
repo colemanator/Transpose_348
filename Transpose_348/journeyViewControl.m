@@ -16,6 +16,7 @@ NSArray *timeTypesArray;
 @synthesize startLoaction, endLocation, searchData;
 
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -25,6 +26,9 @@ NSArray *timeTypesArray;
     
     NSArray *data = [[NSArray alloc] initWithObjects:@"Leave before",@"Leave After",@"Arive Before",@"Arive After", nil];
     timeTypesArray = data;
+    
+    searchData = [[NSMutableArray alloc] init];
+    
 
 }
 
@@ -66,40 +70,56 @@ NSArray *timeTypesArray;
     [self.view endEditing:YES];
 }
 
-- (IBAction)LocationsNextButton:(id)sender{
-    [searchData addObject: startLoaction.text];
-    [searchData addObject: endLocation.text];
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)send{
+    if([identifier isEqualToString:@"locations"]){
+    if([startLoaction.text  isEqual: @""] || [endLocation.text  isEqual: @""]){
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Sorry you have an error"
+                                                       message: @"Sorry to continue you must enter both a start and an end location"
+                                                      delegate: self
+                                             cancelButtonTitle: nil
+                                             otherButtonTitles:@"OK",nil];
+        [alert show];
+        return false;
+    }else{
+        [searchData addObject: startLoaction.text];
+        [searchData addObject: endLocation.text];
+        return true;
+    }
+    }else if([identifier isEqualToString:@"times"]){
+        NSString *timeTypeSelected = [timeTypesArray objectAtIndex:[self.timeTypePicker selectedRowInComponent:0]];
+        
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"HH:MM"];
+        
+        NSString *timeSelected = [dateFormatter stringFromDate:_selectedTime.date];
+        
+        [searchData addObject: timeTypeSelected];
+        [searchData addObject: timeSelected];
+        return true;
+    }else if([identifier isEqualToString:@"transports"]){
+        if(_bus.on){
+            [searchData addObject:@"bus"];
+        }
+        if(_train.on){
+            [searchData addObject:@"train"];
+        }
+        if(_ferry.on){
+            [searchData addObject:@"ferry"];
+        }
+        if(_tram.on){
+            [searchData addObject:@"tram"];
+        }
+        return true;
+    }
+    
+    
+    else{
+        return true;
+    }
+
+
 }
 
-
-
-- (IBAction)timeNextButton:(id)sender {
-    NSString *timeTypeSelected = [timeTypesArray objectAtIndex:[self.timeTypePicker selectedRowInComponent:0]];
-    
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    dateFormatter.timeStyle = NSDateFormatterNoStyle;
-    
-    NSString *timeSelected = [dateFormatter stringFromDate:_time];
-    
-    [searchData addObject: timeTypeSelected];
-    [searchData addObject:timeSelected];
-    
-}
-
-- (IBAction)transportTypeNextButton:(id)sender {
-    if(_bus.on){
-        [searchData addObject:@"bus"];
-    }
-    if(_train.on){
-        [searchData addObject:@"train"];
-    }
-    if(_ferry.on){
-        [searchData addObject:@"ferry"];
-    }
-    if(_tram.on){
-        [searchData addObject:@"tram"];
-    }
-}
 
 
 /*

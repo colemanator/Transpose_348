@@ -11,7 +11,7 @@
 @interface journeyViewControl : UIViewController <UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource>
 
 
-@property (strong, retain) NSDate *time;
+@property (strong, nonatomic) IBOutlet UIDatePicker *selectedTime;
 @property (weak, nonatomic) IBOutlet UIPickerView *timeTypePicker;
 @property (strong, nonatomic) IBOutlet UITextField *startLoaction;
 @property (strong, nonatomic) IBOutlet UITextField *endLocation;
@@ -21,8 +21,5 @@
 @property (strong, nonatomic) IBOutlet UISwitch *ferry;
 @property (strong, nonatomic) IBOutlet UISwitch *tram;
 - (IBAction)backgroundTap:(id)sender;
-- (IBAction)LocationsNextButton:(id)sender;
-- (IBAction)timeNextButton:(id)sender;
-- (IBAction)transportTypeNextButton:(id)sender;
 
 @end

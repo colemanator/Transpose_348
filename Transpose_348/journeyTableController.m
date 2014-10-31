@@ -14,6 +14,8 @@
 journeyViewControl *journeySearch;
 
 NSArray *journeies;
+NSData *data;
+NSArray *jsonArray;
 
 -(void)viewDidLoad{
     [super viewDidLoad];
@@ -22,9 +24,29 @@ NSArray *journeies;
     [[NSUserDefaults standardUserDefaults] synchronize];
     
     journeies = [[NSArray alloc] initWithObjects:@"Central station to caboolture station",@"Southbank station to caboolture station", nil];
-    journeySearch = [[journeyViewControl alloc]init];
+    data = [[NSData alloc] init];
+
+    NSString *str=@"http://transposeapp.com/scripts/results.php";
+    NSURL *url=[NSURL URLWithString:str];
+    data=[NSData dataWithContentsOfURL:url];
+    NSError *error=nil;
+    id response=[NSJSONSerialization JSONObjectWithData:data options:
+                 NSJSONReadingMutableContainers error:&error];
     
+    NSLog(@"Your JSON Object: %@ Or Error is: %@", response, error);
     
+    NSError *e = nil;
+    jsonArray = [NSJSONSerialization JSONObjectWithData: data options: NSJSONReadingMutableContainers error: &e];
+    
+    if (!jsonArray) {
+        NSLog(@"Error parsing JSON: %@", e);
+    } else {
+        for(NSDictionary *item in jsonArray) {
+            NSLog(@"Item: %@", item);
+        }
+    }
+    
+    NSLog(@"%@",jsonArray);
     
 }
 
@@ -37,7 +59,7 @@ NSArray *journeies;
 #pragma journey results cell properties
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [journeies count];
+    return [jsonArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -48,7 +70,7 @@ NSArray *journeies;
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
     }
     
-    cell.textLabel.text = [journeies objectAtIndex:indexPath.row];
+    cell.textLabel.text = [[jsonArray objectAtIndex:indexPath.row] objectForKey:(@"totaltime")];
     return cell;}
 
 - (void)tableView:(UITableView *)tableView
@@ -61,7 +83,7 @@ didSelectRowAtIndexPath:(NSIndexPath*)indexPath {
     
     //Perform a segue.
     [self performSegueWithIdentifier:segueString
-                              sender:[journeies objectAtIndex:indexPath.row]];
+                              sender:[[jsonArray objectAtIndex:indexPath.row] objectForKey:(@"totaltime")]];
 }
 
 
